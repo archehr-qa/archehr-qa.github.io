@@ -1,0 +1,44 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.toc {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 3px;
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.evidence-highlight {
+  background-color: #fff3cd;
+  transition: background-color 0.3s;
+}
+
+.citation {
+  cursor: pointer;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.answer-sentence.highlight {
+  background-color: #e3f2fd;
+  transition: background-color 0.3s;
+}
+
+section {
+  font-size: 15px;
+}

@@ -1,0 +1,9 @@
+title: "ArchEHR-QA 2025 <i>(pronounced \"Archer\")</i>:<br>Shared Task on Grounded Electronic Health Record Question Answering"
+short_title: "ArchEHR-QA 2025: BioNLP@ACL Shared Task"
+description: <a href='https://aclweb.org/aclwiki/BioNLP_Workshop'>BioNLP @ACL 2025 Shared Task</a> on grounded question answering (QA) from electronic health records (EHRs)
+show_downloads: false
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+github:
+  is_project_page: false
