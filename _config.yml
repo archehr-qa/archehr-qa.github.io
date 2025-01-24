@@ -3,8 +3,10 @@ short_title: "ArchEHR-QA 2025: BioNLP@ACL Shared Task"
 description: <a href='https://aclweb.org/aclwiki/BioNLP_Workshop'>BioNLP @ACL 2025 Shared Task</a> on grounded question answering (QA) from electronic health records (EHRs)
 show_downloads: false
 remote_theme: pages-themes/minimal@v0.2.0
+url: https://archehr-qa.github.io/
 plugins:
 - jekyll-remote-theme
+- jekyll-sitemap
 github:
   is_project_page: false
   is_user_page: false
