@@ -26,6 +26,9 @@ All deadlines are 11:59 PM (“Anywhere on Earth”).
 
 Join our Google Group at [https://groups.google.com/g/archehr-qa](https://groups.google.com/g/archehr-qa) to get the important updates! For any questions related to the shared task, please reach out using the [Google Group](https://groups.google.com/g/archehr-qa) or email at [sarvesh.soni@nih.gov](mailto:sarvesh.soni@nih.gov).
 
+**Note:**
+The Google Group e-mails may end up in your spam folder.
+Please add [archehr-qa@googlegroups.com](mailto:archehr-qa@googlegroups.com) and [noreply@groups.google.com](mailto:noreply@groups.google.com) to your address book to ensure delivery of these emails.
 
 ## Task Overview
 
