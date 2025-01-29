@@ -119,6 +119,7 @@ Clinical note excerpts will come pre-annotated with sentence numbers which must 
 ### Access
 
 The development and test datasets will be made available in February and March (tentatively) through PhysioNet[^physionet].
+To ensure timely access to the datasets upon release, please sign up for PhysioNet and complete the required training to access the [MIMIC-III Clinical Database](https://physionet.org/content/mimiciii/1.4/).
 
 
 ## Evaluation
