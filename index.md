@@ -136,7 +136,7 @@ Detailed instructions will be added soon.
 
 
 ## Paper Submission
-All shared task participants are invited to submit a paper describing their systems to the Proceedings of the 24rd Workshop on Biomedical Natural Language Processing (BioNLP) at ACL 2025.
+All shared task participants are invited to submit a paper describing their systems to the Proceedings of the 24th Workshop on Biomedical Natural Language Processing (BioNLP) at ACL 2025.
 Only short papers will be accepted for shared task participants.
 The shared task papers will go through a faster review process.
 All submissions will go through START at [https://softconf.com/acl2025/BioNLP2025-ST](https://softconf.com/acl2025/BioNLP2025-ST).
