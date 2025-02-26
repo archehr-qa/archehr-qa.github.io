@@ -2,6 +2,10 @@
 
 ---
 
+## News
+
+* **Update 02/25/2025**: We are releasing the development set patient cases with associated MIMIC note IDs now (see [https://github.com/soni-sarvesh/archehr-qa](https://github.com/soni-sarvesh/archehr-qa)). We are currently working on making the note excerpts available via PhysioNet at the earliest.
+
 ## Introduction
 
 Responding to patients' inbox messages through patient portals is one of the main contributors to increasing clinician burden.
