@@ -112,13 +112,9 @@ Simplification of answers to lay language is assumed to be performed later and i
 
 ## Data
 
-The questions in the dataset are inspired from queries submitted by consumers to the National Library of Medicine (NLM) through MedlinePlus[^medlineplus], CHiQA[^chiqa], and customer services.
-The clinical note excerpts used in the dataset are inspired from MIMIC[^mimic].
-The development and test sets will consist of a sample set of questions with corresponding clinical note excerpts.
-Each question in the development set will also contain a plausible answer grounded in the corresponding clinical note.
-For test questions, the submissions should return a natural language answer with citations to the sentence numbers from corresponding clinical note excerpt.
-Clinical note excerpts will come pre-annotated with sentence numbers which must be used to cite the clinical evidence sentences in system responses.
+The dataset consists of questions (inspired by real patient questions) and associated EHR data (derived from the MIMIC database[^mimic]) containing important clinical evidence to answer these questions. Each instance of the question-note pairs is referred to as a "case". Clinical note excerpts come pre-annotated with sentence numbers which must be used to cite the clinical evidence sentences in system responses. Each sentence is manually annotated with a "relevance" label to mark its importance in answering the given question as `"essential"`, `"supplementary"`, or `"not-relevant"`.
 
+The development set (available on [PhysioNet](https://doi.org/10.13026/zzax-sy62)) comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers.
 
 ### Access
 
@@ -176,8 +172,6 @@ If you are interested, please send an email to [**sarvesh.soni@nih.gov**](mailto
 
 ## References
 
-[^medlineplus]: MedlinePlus. [https://medlineplus.gov/](https://medlineplus.gov/) Accessed Dec 26, 2024
-[^chiqa]: Dina Demner-Fushman, Yassine Mrabet, and Asma Ben Abacha. 2020. Consumer health information and question answering: helping consumers find answers to their health-related information needs. Journal of the American Medical Informatics Association, 27(2):194–201. [https://doi.org/10.1093/jamia/ocz152](https://doi.org/10.1093/jamia/ocz152)
 [^mimic]: Alistair E. W. Johnson, Tom J. Pollard, Lu Shen, Li-wei H. Lehman, Mengling Feng, Mohammad Ghassemi, Benjamin Moody, Peter Szolovits, Leo Anthony Celi, and Roger G. Mark. 2016. MIMIC-III, a freely accessible critical care database. Scientific Data, 3(1):160035. [https://doi.org/10.1038/sdata.2016.35](https://doi.org/10.1038/sdata.2016.35)
 [^physionet]: PhysioNet. [https://physionet.org/](https://physionet.org/) Accessed Dec 26, 2024
 [^rouge]: Chin-Yew Lin. 2004. ROUGE: A Package for Automatic Evaluation of Summaries. In Text Summarization Branches Out, pages 74–81, Barcelona, Spain. Association for Computational Linguistics. [https://aclanthology.org/W04-1013/](https://aclanthology.org/W04-1013/)
