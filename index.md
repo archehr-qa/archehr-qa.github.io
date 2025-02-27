@@ -4,7 +4,7 @@
 
 ## News
 
-* **Update 02/25/2025**: We are releasing the development set patient cases with associated MIMIC note IDs now (see [https://github.com/soni-sarvesh/archehr-qa](https://github.com/soni-sarvesh/archehr-qa)). We are currently working on making the note excerpts available via PhysioNet at the earliest.
+* **February 26, 2025**: The development set is now available on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62).
 
 ## Introduction
 
@@ -17,7 +17,7 @@ The objective of this shared task is to automatically answer patients' questions
 <p style="margin-top: -1.2em;">(Tentative)</p>
 
 * First call for participation: January 24 (Friday), 2025
-* Release of the development dataset: February 25 (Tuesday), 2025
+* Release of the development dataset: February 26 (Wednesday), 2025
 * Release of the public and hidden test datasets: March 25 (Tuesday), 2025
 * Submission of system responses: April 25 (Friday), 2025
 * Submission of shared task papers (optional): May 2 (Friday), 2025
@@ -127,6 +127,7 @@ To ensure timely access to the datasets upon release, please sign up for PhysioN
 
 
 ## Evaluation
+<p style="margin-top: -1.2em;">(Tentative)</p>
 
 The submissions will be evaluated for both the quality of generated answers and the use of clinical evidence for grounding.
 The evidence sentences cited in the generated answers will be evaluated using Precision, Recall, and F1 Scores considering a manually annotated ground truth set of evidence sentences.
