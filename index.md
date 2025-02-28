@@ -19,7 +19,7 @@ The objective of this shared task is to automatically answer patients' questions
 
 * First call for participation: January 24 (Friday), 2025
 * Release of the development dataset: February 26 (Wednesday), 2025
-* Release of the public and hidden test datasets: March 25 (Tuesday), 2025
+* Release of the test dataset: March 25 (Tuesday), 2025
 * Submission of system responses: April 25 (Friday), 2025
 * Submission of shared task papers (optional): May 2 (Friday), 2025
 * Notification of acceptance: May 10 (Saturday), 2025
