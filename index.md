@@ -4,7 +4,8 @@
 
 ## News
 
-* **February 26, 2025**: The development set is now available on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62).
+* **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
+* **February 26, 2025**: The development set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
 
 ## Introduction
 
