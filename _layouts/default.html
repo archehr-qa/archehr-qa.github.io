@@ -47,7 +47,7 @@
           {% assign third_char = stripped_line | slice: 2, 1 %}
           {% if stripped_line.size >= 3 and first_char == '#' and second_char == '#' and third_char == ' ' %}
             {% assign heading = stripped_line | remove: '## ' | strip %}
-            <a href="#{{ heading | slugify }}">{{ heading }}</a><br>
+            <a href="#{{ heading | slugify }}" onclick="event.preventDefault(); document.querySelector('#{{ heading | slugify }}').scrollIntoView({ behavior: 'smooth' });">{{ heading }}</a><br>
           {% endif %}
         {% endfor %}
 

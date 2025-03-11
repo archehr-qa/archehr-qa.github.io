@@ -4,6 +4,7 @@
 
 ## News
 
+* **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
 * **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
 * **February 26, 2025**: The development set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
 
@@ -102,13 +103,24 @@ The task is to construct coherent answers or responses to input questions that m
 
 ### Task Details
 
+_Inputs_:
 We do not enforce the use of any specific version of questions (patient or clinician) to generate answers; the participants can use one or both.
-Note that the entire clinical note excerpt provided in the dataset may not be required in order to generate a correct answer to the question.
-Thus, using all the sentences from the provided clinical note for grounding is not mandatory.
-Further, sentences in the generated answer may be supported using one, multiple, or none (unsupported) of the sentences from the clinical note.
+Note that the entire clinical note excerpt provided in the dataset may not be required in order to generate an answer to the question.
+Thus, using all sentences from the clinical notes for grounding is not mandatory.
+Further, the questions may not be answered in full by the clinical notes.
+This is a natural scenario and a step toward answering questions using the whole EHR.
+The model must only make use of the provided inputs (questions and note excerpts) to generate an answer.
+The questions may also require additional world knowledge to answer.
+However, no external knowledge should be explicitly given to the model.
+
+_Outputs_:
+The sentences in the generated answer may be supported using one, multiple, or none (unsupported) of the sentences from the clinical note.
 The unsupported sentences in the answer may be ignored during the quantitative evaluation.
 The answers should be in the professional register to better match the contents of the clinical notes.
 Simplification of answers to lay language is assumed to be performed later and is not the focus of this task.
+The generated answer should be limited to 75 words, which roughly correspond to 5 sentences.
+This is based on our observations from the baseline experiments and existing literature supporting that a paragraph-long answer is preferred by users [^linetal2003]<sup>,</sup>[^jeonetal2006].
+There are no limitations to the number of note sentences cited.
 
 
 ## Data
@@ -126,15 +138,31 @@ To ensure timely access to the datasets upon release, please sign up for PhysioN
 ## Evaluation
 <p style="margin-top: -1.2em;">(Tentative)</p>
 
-The submissions will be evaluated for both the quality of generated answers and the use of clinical evidence for grounding.
-The evidence sentences cited in the generated answers will be evaluated using Precision, Recall, and F1 Scores considering a manually annotated ground truth set of evidence sentences.
-The alignment of sentences in the generated answer with the cited evidence sentence(s) from the clinical notes will be assessed using ROUGE[^rouge], BERTScore[^bertscore], AlignScore[^alignscore], and MEDCON[^medcon].
+Submissions will be evaluated based on their use of clinical evidence for grounding _("Factuality")_ and the relevance of the generated answers _("Relevance")_.
+
+_Factuality_ will be assessed by calculating Precision, Recall, and F1 Scores between the cited evidence sentences in the generated answers and the manually annotated ground truth set of evidence sentences.
+Each note sentence is manually annotated with a `'relevance'` label to mark its importance in answering the given question as `'essential'`, `'supplementary'`, or `'not-relevant'`.
+Two variations of Citation F1 Scores will be calculated.
+In the _"strict"_ variation, only `'essential'` labels will be considered as answers.
+In the _"lenient"_ variation, both `'essential'` and `'supplementary'` labels will be considered as answers.
+
+_Relevance_ will be evaluated by comparing the generated answer text with the ground truth `'essential'` note sentences and the question using the following evaluation metrics:
+
+* BLEU[^bleu]
+* ROUGE[^rouge]
+* SARI[^sari]
+* BERTScore[^bertscore]
+* AlignScore[^alignscore]
+* MEDCON[^medcon]
+
+The _Overall_ scores for the leaderboard will be the mean of _Factuality_ (Strict Citation F1 Scores) and _Relevance_ (combination of all the normalized scores) scores.
+The evaluation script will be released soon.
 
 
 ## System Submission
 
 Submissions of system responses will be made through Codabench[^codabench].
-Detailed instructions will be added soon.
+The registrations on Codabench and the instructions to submit responses will be available soon.
 
 
 ## Paper Submission
@@ -173,9 +201,13 @@ If you are interested, please send an email to [**sarvesh.soni@nih.gov**](mailto
 
 ## References
 
+[^linetal2003]: Lin, J., Quan, D., Sinha, V., Bakshi, K., Huynh, D., Katz, B., & Karger, D. R. (2003, September). What Makes a Good Answer? The Role of Context in Question Answering. In INTERACT. [link](https://groups.csail.mit.edu/infolab/publications/Lin-etal-INTERACT03.pdf)
+[^jeonetal2006]: Jeon, J., Croft, W. B., Lee, J. H., & Park, S. (2006, August). A framework to predict the quality of answers with non-textual features. In Proceedings of the 29th annual international ACM SIGIR conference on Research and development in information retrieval (pp. 228-235). [https://doi.org/10.1145/1148170.1148212](https://doi.org/10.1145/1148170.1148212)
 [^mimic]: Alistair E. W. Johnson, Tom J. Pollard, Lu Shen, Li-wei H. Lehman, Mengling Feng, Mohammad Ghassemi, Benjamin Moody, Peter Szolovits, Leo Anthony Celi, and Roger G. Mark. 2016. MIMIC-III, a freely accessible critical care database. Scientific Data, 3(1):160035. [https://doi.org/10.1038/sdata.2016.35](https://doi.org/10.1038/sdata.2016.35)
 [^physionet]: PhysioNet. [https://physionet.org/](https://physionet.org/) Accessed Dec 26, 2024
+[^bleu]: Papineni, K., Roukos, S., Ward, T., & Zhu, W. J. (2002, July). Bleu: a method for automatic evaluation of machine translation. In Proceedings of the 40th annual meeting of the Association for Computational Linguistics (pp. 311-318). [https://doi.org/10.3115/1073083.1073135](https://doi.org/10.3115/1073083.1073135)
 [^rouge]: Chin-Yew Lin. 2004. ROUGE: A Package for Automatic Evaluation of Summaries. In Text Summarization Branches Out, pages 74–81, Barcelona, Spain. Association for Computational Linguistics. [https://aclanthology.org/W04-1013/](https://aclanthology.org/W04-1013/)
+[^sari]: Xu, W., Napoles, C., Pavlick, E., Chen, Q., & Callison-Burch, C. (2016). Optimizing statistical machine translation for text simplification. Transactions of the Association for Computational Linguistics, 4, 401-415. [https://aclanthology.org/Q16-1029/](https://aclanthology.org/Q16-1029/)
 [^bertscore]: Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q. Weinberger, and Yoav Artzi. 2019. BERTScore: Evaluating Text Generation with BERT. In International Conference on Learning Representations. [https://openreview.net/forum?id=SkeHuCVFDr](https://openreview.net/forum?id=SkeHuCVFDr)
 [^alignscore]: Yuheng Zha, Yichi Yang, Ruichen Li, and Zhiting Hu. 2023. AlignScore: Evaluating Factual Consistency with A Unified Alignment Function. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 11328–11348, Toronto, Canada. Association for Computational Linguistics. [https://doi.org/10.18653/v1/2023.acl-long.634](https://doi.org/10.18653/v1/2023.acl-long.634)
 [^medcon]: Wen-wai Yim, Yujuan Fu, Asma Ben Abacha, Neal Snider, Thomas Lin, and Meliha Yetisgen. 2023. Aci-bench: a Novel Ambient Clinical Intelligence Dataset for Benchmarking Automatic Visit Note Generation. Scientific Data, 10(1):586. [https://doi.org/10.1038/s41597-023-02487-3](https://doi.org/10.1038/s41597-023-02487-3)
