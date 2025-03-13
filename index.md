@@ -111,7 +111,11 @@ Further, the questions may not be answered in full by the clinical notes.
 This is a natural scenario and a step toward answering questions using the whole EHR.
 The model must only make use of the provided inputs (questions and note excerpts) to generate an answer.
 The questions may also require additional world knowledge to answer.
-However, no external knowledge should be explicitly given to the model.
+However, no external knowledge should be explicitly given to the model (see the note below).
+
+**Note**:
+Participants must submit at least one run (out of a maximum of three) following the guidelines prohibiting external knowledge.
+Additionally, they may use extra data, but we ask that they specify their approach, including any use of public or non-public datasets, in preparing the submission.
 
 _Outputs_:
 The sentences in the generated answer may be supported using one, multiple, or none (unsupported) of the sentences from the clinical note.
@@ -162,6 +166,7 @@ The evaluation script will be released soon.
 ## System Submission
 
 Submissions of system responses will be made through Codabench[^codabench].
+Each team may make up to three successful submissions to Codabench in total.
 The registrations on Codabench and the instructions to submit responses will be available soon.
 
 
