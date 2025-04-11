@@ -4,6 +4,7 @@
 
 ## News
 
+* **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
 * **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
 * **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
 * **February 26, 2025**: The development set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
@@ -20,7 +21,7 @@ The objective of this shared task is to automatically answer patients' questions
 
 * First call for participation: January 24 (Friday), 2025
 * Release of the development dataset: February 26 (Wednesday), 2025
-* Release of the test dataset: March 28 (Friday), 2025
+* Release of the test dataset: April 11 (Friday), 2025
 * Submission of system responses: April 25 (Friday), 2025
 * Submission of shared task papers (optional): May 2 (Friday), 2025
 * Notification of acceptance: May 10 (Saturday), 2025
@@ -131,7 +132,7 @@ There are no limitations to the number of note sentences cited.
 
 The dataset consists of questions (inspired by real patient questions) and associated EHR data (derived from the MIMIC database[^mimic]) containing important clinical evidence to answer these questions. Each instance of the question-note pairs is referred to as a "case". Clinical note excerpts come pre-annotated with sentence numbers which must be used to cite the clinical evidence sentences in system responses. Each sentence is manually annotated with a "relevance" label to mark its importance in answering the given question as `"essential"`, `"supplementary"`, or `"not-relevant"`.
 
-The development set (available on [PhysioNet](https://doi.org/10.13026/zzax-sy62)) comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers.
+The development set comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers. The dataset is available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
 
 ### Access
 
