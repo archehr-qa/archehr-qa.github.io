@@ -4,7 +4,7 @@
 
 ## News
 
-* **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation).
+* **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
 * **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
 * **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
 * **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
@@ -167,6 +167,7 @@ The evaluation script will be released soon.
 
 Please visit the competition on Codabench at [https://www.codabench.org/competitions/5302/](https://www.codabench.org/competitions/5302/) to submit system responses.
 Each team may make up to three successful submissions to Codabench[^codabench] in total.
+Note that the automatically computed scores on Codabench are not final, however, they should be fairly close to the final scores that will be computed after reconciliation of double annotations.
 
 
 ## Paper Submission
