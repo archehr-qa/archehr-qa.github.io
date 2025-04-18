@@ -160,7 +160,7 @@ _Relevance_ will be evaluated by comparing the generated answer text with the gr
 * MEDCON[^medcon]
 
 The _Overall_ scores for the leaderboard will be the mean of _Factuality_ (Strict Citation F1 Scores) and _Relevance_ (combination of all the normalized scores) scores.
-The evaluation script will be released soon.
+The scoring script is available on GitHub at [https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation).
 
 
 ## System Submission
