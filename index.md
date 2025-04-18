@@ -4,6 +4,7 @@
 
 ## News
 
+* **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation).
 * **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
 * **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
 * **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
@@ -132,16 +133,14 @@ There are no limitations to the number of note sentences cited.
 
 The dataset consists of questions (inspired by real patient questions) and associated EHR data (derived from the MIMIC database[^mimic]) containing important clinical evidence to answer these questions. Each instance of the question-note pairs is referred to as a "case". Clinical note excerpts come pre-annotated with sentence numbers which must be used to cite the clinical evidence sentences in system responses. Each sentence is manually annotated with a "relevance" label to mark its importance in answering the given question as `"essential"`, `"supplementary"`, or `"not-relevant"`.
 
-The development set comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers. The dataset is available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
+The development set comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers.
 
 ### Access
 
-The development and test datasets will be made available in February and March (tentatively) through PhysioNet[^physionet].
-To ensure timely access to the datasets upon release, please sign up for PhysioNet and complete the required training to access the [MIMIC-III Clinical Database](https://physionet.org/content/mimiciii/1.4/).
+The dataset is available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please sign up for PhysioNet[^physionet] and complete the required training to access the dataset.
 
 
 ## Evaluation
-<p style="margin-top: -1.2em;">(Tentative)</p>
 
 Submissions will be evaluated based on their use of clinical evidence for grounding _("Factuality")_ and the relevance of the generated answers _("Relevance")_.
 
@@ -166,9 +165,8 @@ The evaluation script will be released soon.
 
 ## System Submission
 
-Submissions of system responses will be made through Codabench[^codabench].
-Each team may make up to three successful submissions to Codabench in total.
-The registrations on Codabench and the instructions to submit responses will be available soon.
+Please visit the competition on Codabench at [https://www.codabench.org/competitions/5302/](https://www.codabench.org/competitions/5302/) to submit system responses.
+Each team may make up to three successful submissions to Codabench[^codabench] in total.
 
 
 ## Paper Submission
