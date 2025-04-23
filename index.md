@@ -4,6 +4,7 @@
 
 ## News
 
+* **April 23, 2025**: The deadline to submit system responses is extended to **April 28 (Monday), 2025 (“Anywhere on Earth”)**.
 * **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
 * **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
 * **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
@@ -23,7 +24,7 @@ The objective of this shared task is to automatically answer patients' questions
 * First call for participation: January 24 (Friday), 2025
 * Release of the development dataset: February 26 (Wednesday), 2025
 * Release of the test dataset: April 11 (Friday), 2025
-* Submission of system responses: April 25 (Friday), 2025
+* Submission of system responses: ~~April 25 (Friday), 2025~~ **April 28 (Monday), 2025**
 * Submission of shared task papers (optional): May 2 (Friday), 2025
 * Notification of acceptance: May 10 (Saturday), 2025
 * Camera-ready system papers due: May 20 (Tuesday), 2025 \
