@@ -4,6 +4,7 @@
 
 ## News
 
+* **April 25, 2025**: The <a href="#paper-submission" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Paper Submission</a> section is updated with more information.
 * **April 23, 2025**: The deadline to submit system responses is extended to **April 28 (Monday), 2025 (“Anywhere on Earth”)**.
 * **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
 * **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
@@ -175,8 +176,39 @@ Note that the automatically computed scores on Codabench are not final, however,
 All shared task participants are invited to submit a paper describing their systems to the Proceedings of the 24th Workshop on Biomedical Natural Language Processing (BioNLP) at ACL 2025.
 Only short papers will be accepted for shared task participants.
 The shared task papers will go through a faster review process.
-All submissions will go through START at [https://softconf.com/acl2025/BioNLP2025-ST](https://softconf.com/acl2025/BioNLP2025-ST).
+
+_Format_:
+Unless otherwise specified below, please adhere to the ACL 2025 short paper guidelines. For more details, refer to the ACL [Call for Papers](https://2025.aclweb.org/calls/main_conference_papers/#paper-submission-details).
+Briefly, the papers may consist of four (4) pages of content with unlimited space after the conclusion for limitations (required), ethical considerations (optional), and references (see the [guideline](https://aclrollingreview.org/cfp#short-papers) for full details).
+Papers must be submitted in a non-anonymized format (i.e., with author names included).
+The paper titles must follow the format: “{TEAM_NAME} at ArchEHR-QA 2025: {DESCRIPTIVE_TITLE}”, where the descriptive title reflects your proposed approach.
+The Overleaf LaTeX template can be found [here](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj).
+
+_Submissions_:
+All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/acl2025/BioNLP2025-ST/track/ArchEHR_QA/](https://softconf.com/acl2025/BioNLP2025-ST/track/ArchEHR_QA/).
 Regardless of participants' decision to submit a paper, they must submit a short one-paragraph summary of their best system to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov) to be included in the shared task overview paper.
+
+_References_:
+We ask participants to ensure that their paper includes proper citations to both the shared task overview paper and the dataset paper.
+
+
+**Overview _(tentative)_:**
+```bibtex
+@inproceedings{soni-etal-2025-archehr-qa,
+  title = "Overview of the ArchEHR-QA 2025 Shared Task on Grounded Question Answering from Electronic Health Records",
+  author = "Soni, Sarvesh and Demner-Fushman, Dina",
+  booktitle = "The 24rd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+  month = aug,
+  year = "2025",
+  address = "Vienna, Austria",
+  publisher = "Association for Computational Linguistics",
+}
+```
+
+**Dataset:**
+```bibtex
+coming soon...
+```
 
 
 ## Organizers
