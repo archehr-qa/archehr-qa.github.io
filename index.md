@@ -4,7 +4,7 @@
 
 ## News
 
-* **April 25, 2025**: The <a href="#paper-submission" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Paper Submission</a> section is updated with more information.
+* **April 25, 2025**: The <a href="#paper-submission" onclick="event.preventDefault(); document.querySelector('#paper-submission').scrollIntoView({ behavior: 'smooth' });">Paper Submission</a> section is updated with more information.
 * **April 23, 2025**: The deadline to submit system responses is extended to **April 28 (Monday), 2025 (“Anywhere on Earth”)**.
 * **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
 * **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
