@@ -4,6 +4,7 @@
 
 ## News
 
+* **April 26, 2025**: The deadline to submit shared task papers is extended to **May 9 (Friday), 2025 (“Anywhere on Earth”)**, with all subsequent deadlines adjusted accordingly (see <a href="#important-dates" onclick="event.preventDefault(); document.querySelector('#important-dates').scrollIntoView({ behavior: 'smooth' });">Important Dates</a>).
 * **April 25, 2025**: The <a href="#paper-submission" onclick="event.preventDefault(); document.querySelector('#paper-submission').scrollIntoView({ behavior: 'smooth' });">Paper Submission</a> section is updated with more information.
 * **April 23, 2025**: The deadline to submit system responses is extended to **April 28 (Monday), 2025 (“Anywhere on Earth”)**.
 * **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
@@ -26,11 +27,10 @@ The objective of this shared task is to automatically answer patients' questions
 * Release of the development dataset: February 26 (Wednesday), 2025
 * Release of the test dataset: April 11 (Friday), 2025
 * Submission of system responses: ~~April 25 (Friday), 2025~~ **April 28 (Monday), 2025**
-* Submission of shared task papers (optional): May 2 (Friday), 2025
-* Notification of acceptance: May 10 (Saturday), 2025
-* Camera-ready system papers due: May 20 (Tuesday), 2025 \
-**↳ No extensions due to the ACL publication deadline**
-* BioNLP Workshop Date: July 31 (Thursday) OR August 1 (Friday), 2025
+* Submission of shared task papers (optional): ~~May 2 (Friday), 2025~~ **May 9 (Friday), 2025**
+* Notification of acceptance: ~~May 10 (Saturday), 2025~~ May 17 (Saturday), 2025
+* Camera-ready system papers due: ~~May 20 (Tuesday), 2025~~ May 27 (Tuesday), 2025
+* BioNLP Workshop Date: August 1 (Friday), 2025
 
 All deadlines are 11:59 PM (“Anywhere on Earth”).
 
