@@ -170,6 +170,7 @@ The scoring script is available on GitHub at [https://github.com/soni-sarvesh/ar
 Please visit the competition on Codabench at [https://www.codabench.org/competitions/5302/](https://www.codabench.org/competitions/5302/) to submit system responses.
 Each team may make up to three successful submissions to Codabench[^codabench] in total.
 Note that the automatically computed scores on Codabench are not final, however, they should be fairly close to the final scores that will be computed after reconciliation of double annotations.
+Please nominate your best submission on Codabench by pushing it to the leaderboard.
 
 
 ## Paper Submission
