@@ -186,7 +186,8 @@ The paper titles must follow the format: “{TEAM_NAME} at ArchEHR-QA 2025: {DES
 The Overleaf LaTeX template can be found [here](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj).
 
 _Submissions_:
-All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/acl2025/BioNLP2025-ST/track/ArchEHR_QA/](https://softconf.com/acl2025/BioNLP2025-ST/track/ArchEHR_QA/).
+All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/acl2025/BioNLP2025-ST](https://softconf.com/acl2025/BioNLP2025-ST).
+On the submission page, please select `"ArchEHR_QA"` using the Task dropdown.
 Regardless of participants' decision to submit a paper, they must submit a short one-paragraph summary of their best system to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov) to be included in the shared task overview paper.
 
 _References_:
