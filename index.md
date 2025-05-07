@@ -199,7 +199,7 @@ We ask participants to ensure that their paper includes proper citations to both
 @inproceedings{soni-etal-2025-archehr-qa,
   title = "Overview of the ArchEHR-QA 2025 Shared Task on Grounded Question Answering from Electronic Health Records",
   author = "Soni, Sarvesh and Demner-Fushman, Dina",
-  booktitle = "The 24rd Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
+  booktitle = "The 24th Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
   month = aug,
   year = "2025",
   address = "Vienna, Austria",
