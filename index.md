@@ -1,40 +1,34 @@
-# BioNLP @ACL 2025 Shared Task on grounded question answering (QA) from electronic health records (EHRs)
+# CL4Health @LREC 2026 Shared Task on grounded question answering (QA) from electronic health records (EHRs)
 
 ---
 
-## News
-
-* **April 26, 2025**: The deadline to submit shared task papers is extended to **May 9 (Friday), 2025 (“Anywhere on Earth”)**, with all subsequent deadlines adjusted accordingly (see <a href="#important-dates" onclick="event.preventDefault(); document.querySelector('#important-dates').scrollIntoView({ behavior: 'smooth' });">Important Dates</a>).
-* **April 25, 2025**: The <a href="#paper-submission" onclick="event.preventDefault(); document.querySelector('#paper-submission').scrollIntoView({ behavior: 'smooth' });">Paper Submission</a> section is updated with more information.
-* **April 23, 2025**: The deadline to submit system responses is extended to **April 28 (Monday), 2025 (“Anywhere on Earth”)**.
-* **April 17, 2025**: The Codabench platform is ready to accept submissions. Visit the [competition on Codabench](https://www.codabench.org/competitions/5302/) to submit system responses. The scoring script is available on [GitHub](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation). Read the <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a> section for more details.
-* **April 11, 2025**: The test set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please check the release notes for more details.
-* **March 11, 2025**: The <a href="#task-details" onclick="event.preventDefault(); document.querySelector('#task-details').scrollIntoView({ behavior: 'smooth' });">Task Details</a> and <a href="#evaluation" onclick="event.preventDefault(); document.querySelector('#evaluation').scrollIntoView({ behavior: 'smooth' });">Evaluation</a> sections are updated with more information.
-* **February 28, 2025**: An updated version (1.1) of the dataset, with some extraneous information removed, has been published on PhysioNet at [https://doi.org/10.13026/zzax-sy62](https://doi.org/10.13026/zzax-sy62). Please ensure you use the latest version of the dataset.
-* **February 26, 2025**: The development set is now available on [PhysioNet](https://doi.org/10.13026/zzax-sy62).
-
 ## Introduction
 
-Responding to patients' inbox messages through patient portals is one of the main contributors to increasing clinician burden.
-To this end, automatically generating answers to questions from patients considering their medical records is important.
-The objective of this shared task is to automatically answer patients' questions given important clinical evidence from their electronic health records (EHRs).
-
+The ArchEHR-QA (“Archer”) shared task focuses on **answering patients' health-related questions using their own electronic health records (EHRs)**.
+While prior work has explored general health question answering, far less attention has been paid to leveraging patient-specific records and to **grounding model outputs in explicit clinical evidence**, i.e., linking answers to specific supporting content in the clinical notes.
+ArchEHR-QA addresses this gap by targeting the problem of producing answers to patient questions that are supported by and explicitly linked to the underlying clinical notes.
 
 ## Important Dates
 <p style="margin-top: -1.2em;">(Tentative)</p>
 
-* First call for participation: January 24 (Friday), 2025
-* Release of the development dataset: February 26 (Wednesday), 2025
-* Release of the test dataset: April 11 (Friday), 2025
-* Submission of system responses: ~~April 25 (Friday), 2025~~ **April 28 (Monday), 2025**
-* Submission of shared task papers (optional): ~~May 2 (Friday), 2025~~ **May 9 (Friday), 2025**
-* Notification of acceptance: ~~May 10 (Saturday), 2025~~ May 17 (Saturday), 2025
-* Camera-ready system papers due: ~~May 20 (Tuesday), 2025~~ May 27 (Tuesday), 2025
-* BioNLP Workshop Date: August 1 (Friday), 2025
+* First call for participation: January 2 (Friday), 2026
+* **Release of the development dataset:** January 2 (Friday), 2026
+* **Release of the test dataset:**
+  * Subtask 1: January 19 (Monday), 2026
+  * Subtasks 2–3: January 26 (Monday), 2026
+  * Subtask 4: February 16 (Monday), 2026
+* **Submission of system responses:**
+  * Subtask 1: January 26 (Monday), 2026
+  * Subtasks 2–3: February 16 (Monday), 2026
+  * Subtask 4: March 2 (Monday), 2026
+* **Submission of shared task papers (optional):** March 13 (Friday), 2026
+* Notification of acceptance: March 24 (Tuesday), 2026
+* Camera-ready system papers due: March 31 (Tuesday), 2026
+* **CL4Health Workshop Date:** May 12 (Tuesday), 2026
 
-All deadlines are 11:59 PM (“Anywhere on Earth”).
+All deadlines are **11:59 PM ("Anywhere on Earth")**.
 
-Join our Google Group at [https://groups.google.com/g/archehr-qa](https://groups.google.com/g/archehr-qa) to get the important updates! For any questions related to the shared task, please reach out using the [Google Group](https://groups.google.com/g/archehr-qa) or email at [sarvesh.soni@nih.gov](mailto:sarvesh.soni@nih.gov).
+**Join our Google Group** at [https://groups.google.com/g/archehr-qa](https://groups.google.com/g/archehr-qa) to get the important updates! For any questions related to the shared task, please reach out using the [Google Group](https://groups.google.com/g/archehr-qa) or email at **[sarvesh.soni@nih.gov](mailto:sarvesh.soni@nih.gov)**.
 
 **Note:**
 The Google Group e-mails may end up in your spam folder.
@@ -42,117 +36,389 @@ Please add [archehr-qa@googlegroups.com](mailto:archehr-qa@googlegroups.com) and
 
 ## Task Overview
 
-We propose the task of automatically generating answers to patients' health-related questions that are grounded in the evidence from patients' clinical notes.
-The dataset will consist of hand-curated realistic patient questions (submitted through a patient portal) and their corresponding clinician-rewritten versions (crafted to assist in formulating their responses).
-The task is to construct coherent answers or responses to input questions that must use and be grounded in the provided clinical note excerpts.
+This second iteration builds on the 2025 challenge (which was collocated with the ACL 2025 BioNLP Workshop) by expanding the dataset and introducing **four complementary subtasks** spanning patient question interpretation, clinical evidence identification, answer generation, and answer–evidence alignment.
+This year's shared task will follow a **staged data release schedule**, with separate deadlines for Subtask 1, Subtasks 2–3, and Subtask 4.
+Teams may **participate in any subset of subtasks** and will be invited to submit system description papers detailing their approaches and results.
 
 
-<p style="margin-bottom: 1em;"><strong><em>Example #1</em></strong></p>
-> <div style="margin-bottom:0.5em;"><strong><em>Patient Question</em></strong> (underlined is the main question)</div>
-> Took my 59 yo father to ER ultrasound discovered he had an aortic aneurysm.
-> He had a salvage repair (tube graft).
-> Long surgery / recovery for couple hours then removed packs.
-> <u>why did they do this surgery?????</u>
-> After this time he spent 1 month in hospital now sent home.
+### Example Cases from Dataset
 
-> <div style="margin-bottom:0.5em;"><strong><em>Clinician Question</em></strong></div>
-> Why did they perform the emergency salvage repair on him?
+The dataset consists of patient-authored questions, corresponding clinician-interpreted counterparts, clinical note excerpts with sentence-level relevance annotations, and reference clinician-authored answers grounded in the notes.
 
-> <div style="margin-bottom:0.5em;"><strong><em>Clinical Note</em></strong> (sentences numbered for grounding)</div>
-> <span id="evidence-1.1">**1:** He was transferred to the hospital on 2025-1-20 for emergent repair of his ruptured thoracoabdominal aortic aneurysm.</span>
-> <span id="evidence-1.2">**2:** He was immediately taken to the operating room where he underwent an emergent salvage repair of ruptured thoracoabdominal aortic aneurysm with a 34-mm Dacron tube graft using deep hypothermic circulatory arrest.</span>
-> **3:** Please see operative note for details which included cardiac arrest x2.
-> **4:** Postoperatively he was taken to the intensive care unit for monitoring with an open chest.
-> **5:** He remained intubated and sedated on pressors and inotropes.
-> **6:** On 2025-1-22, he returned to the operating room where he underwent exploration and chest closure.
-> **7:** On 1-25 he returned to the OR for abd closure JP/ drain placement/ feeding jejunostomy placed at that time for nutritional support.
-> <p style="margin-top: -0.5em;"></p>
-> <span id="evidence-1.8">**8:** Thoracoabdominal wound healing well with exception of very small open area mid wound that is @1cm around and 1/2cm deep, no surrounding erythema.</span>
-> **9:** Packed with dry gauze and covered w/DSD.
-
-> <div style="margin-bottom:0.5em;"><strong><em>Answer</em></strong> (hover over a citation to highlight relevant sentences)</div>
-> <span class="answer-sentence">His aortic aneurysm was caused by the rupture of a thoracoabdominal aortic aneurysm, which required emergent surgical intervention <span class="citation" data-evidence="evidence-1.1">(1)</span>.</span>
-<span class="answer-sentence">He underwent a complex salvage repair using a 34-mm Dacron tube graft and deep hypothermic circulatory arrest to address the rupture <span class="citation" data-evidence="evidence-1.2">(2)</span>.</span>
-<span class="answer-sentence">The extended recovery time and hospital stay were necessary due to the severity of the rupture and the complexity of the surgery, though his wound is now healing well with only a small open area noted <span class="citation" data-evidence="evidence-1.8">(8)</span>.</span>
-
-<p style="margin-bottom: 1em;"><strong><em>Example #2</em></strong></p>
-> <div style="margin-bottom:0.5em;"><strong><em>Patient Question</em></strong> (underlined is the main question)</div>
+<p style="margin-bottom: 1em;"><strong><em>Example Case #1</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Patient Question</em></strong></div>
 > I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge.
 > Doctor advised for ERCP.
-> <u>My question is if the sludge was there does not any medication help in flushing it out?</u>
-> <u>Whether ERCP was the only cure?</u>
+> My question is if the sludge was there does not any medication help in flushing it out?
+> Whether ERCP was the only cure?
 
-> <div style="margin-bottom:0.5em;"><strong><em>Clinician Question</em></strong></div>
+> <div style="margin-bottom:0.5em;"><strong><em>Clinician-Interpreted Question</em></strong></div>
 > Why was ERCP recommended over a medication-based treatment for CBD sludge?
 
-> <div style="margin-bottom:0.5em;"><strong><em>Clinical Note</em></strong> (sentences numbered for grounding)</div>
-> <span id="evidence-2.1">**1:** During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.</span>
+> <div style="margin-bottom:0.5em;"><strong><em>Clinical Note Excerpt</em></strong> (sentences numbered for grounding)</div>
+> <span id="evidence-1.1">**1:** During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.</span>
 > **2:** However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.
 > **3:** Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.
 > **4:** The Vancomycin was discontinued.
-> <p style="margin-top: -0.5em;"></p>
-> <span id="evidence-2.5">**5:** On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.</span>
-> <span id="evidence-2.6">**6:** On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.</span>
-> <span id="evidence-2.7">**7:** As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.</span>
+> <p style="margin-top: 0.5em;"></p>
+> <span id="evidence-1.5">**5:** On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.</span>
+> <span id="evidence-1.6">**6:** On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.</span>
+> <span id="evidence-1.7">**7:** As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.</span>
 > **8:** At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.
 
+> <div style="margin-bottom:0.5em;"><strong><em>Clinical Specialty</em></strong></div>
+> Gastroenterology
+
 > <div style="margin-bottom:0.5em;"><strong><em>Answer</em></strong> (hover over a citation to highlight relevant sentences)</div>
-> <span class="answer-sentence">Medications can sometimes help in managing bile duct sludge, but in this case, ERCP was necessary due to the severity of the obstruction and its complications.</span>
-> <span class="answer-sentence">The initial ERCP revealed significant biliary obstruction caused by sludge and stones, requiring the placement of a stent to restore bile drainage <span class="citation" data-evidence="evidence-2.1">(1)</span>.</span>
-> <span class="answer-sentence">However, even after this intervention, the liver function tests and bilirubin levels continued to rise, indicating that the obstruction was not fully resolved <span class="citation" data-evidence="evidence-2.5">(5)</span>.</span>
-> <span class="answer-sentence">A follow-up ERCP confirmed that the stent itself had become acutely obstructed by sludge and stones, necessitating further intervention <span class="citation" data-evidence="evidence-2.6">(6)</span>.</span>
-> <span class="answer-sentence">During this procedure, a sphincterotomy was performed, and several stones were physically removed, which medications alone could not have achieved <span class="citation" data-evidence="evidence-2.7">(7)</span>.</span>
-> <span class="answer-sentence">These findings confirm that ERCP was essential in addressing his condition and preventing further complications.</span>
+> <span class="answer-sentence">An endoscopic retrograde cholangiopancreatography, ERCP, was recommended to place a common bile duct stent <span class="citation" data-evidence="evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">This stent was placed to allow drainage of the biliary obstruction which was caused by stones and sludge <span class="citation" data-evidence="evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">Due to no improvement in liver function, the patient needed a repeat ERCP <span class="citation" data-evidence="evidence-1.5">[5]</span>.</span>
+> <span class="answer-sentence">The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge <span class="citation" data-evidence="evidence-1.6">[6]</span>.</span>
+> <span class="answer-sentence">The stones and stent were successfully removed during this procedure by performing a sphincterotomy <span class="citation" data-evidence="evidence-1.7">[7]</span>.</span>
 
 
-### Task Details
+<p style="margin-bottom: 1em;"><strong><em>Example Case #2</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Patient Question</em></strong></div>
+> I just wrote about my dad given multiple shots of lasciks after he was already so swelled his shin looked like it would burst open.
+> Why would they give him so much.
+> He was on oxygen and they took him off of the higher flow rate.
 
-_Inputs_:
-We do not enforce the use of any specific version of questions (patient or clinician) to generate answers; the participants can use one or both.
-Note that the entire clinical note excerpt provided in the dataset may not be required in order to generate an answer to the question.
-Thus, using all sentences from the clinical notes for grounding is not mandatory.
-Further, the questions may not be answered in full by the clinical notes.
-This is a natural scenario and a step toward answering questions using the whole EHR.
-The model must only make use of the provided inputs (questions and note excerpts) to generate an answer.
-The questions may also require additional world knowledge to answer.
-However, no external knowledge should be explicitly given to the model (see the note below).
+> <div style="margin-bottom:0.5em;"><strong><em>Clinician-Interpreted Question</em></strong></div>
+> Why was he given lasix and his oxygen flow rate was reduced?
 
-**Note**:
-Participants must submit at least one run (out of a maximum of three) following the guidelines prohibiting external knowledge.
-Additionally, they may use extra data, but we ask that they specify their approach, including any use of public or non-public datasets, in preparing the submission.
+> <div style="margin-bottom:0.5em;"><strong><em>Clinical Note Excerpt</em></strong> (sentences numbered for grounding)</div>
+> <span id="evidence-2.1">**1:** Acute diastolic heart failure: Pt developed signs and symptoms of volume overload with shortness of breath, increased oxygen requirement and lower extremity edema.</span>
+> **2:** Echo showed preserved EF, no WMA and worsening AI.
+> **3:** CHF most likely secondary to worsening valvular disease.
+> <span id="evidence-2.4">**4:** He was diuresed with lasix IV, intermittently on lasix gtt then transitioned to PO torsemide with improvement in symptoms, although remained on a small amount of supplemental oxygen for comfort.</span>
+> <p style="margin-top: 0.5em;"></p>
+> <span id="evidence-2.5">**5:** Respiratory failure: The patient was intubated for lethargy and acidosis initially and was given 8 L on his presentation to help maintain his BP's.</span>
+> <span id="evidence-2.6">**6:** This undoubtedly contributed to his continued hypoxemic respiratory failure.</span>
+> **7:** He was advanced to pressure support with stable ventilation and oxygenation.
+> **8:** On transfer to the CCU patient was still intubated but off pressors.
+> **9:** Patient was extubated successfully.
+> **10:** He was reintubated transiently for 48 hours for urgent TEE and subsequently extubated without adverse effect or complication.
 
-_Outputs_:
-The sentences in the generated answer may be supported using one, multiple, or none (unsupported) of the sentences from the clinical note.
-The unsupported sentences in the answer may be ignored during the quantitative evaluation.
-The answers should be in the professional register to better match the contents of the clinical notes.
-Simplification of answers to lay language is assumed to be performed later and is not the focus of this task.
-The generated answer should be limited to 75 words, which roughly correspond to 5 sentences.
-This is based on our observations from the baseline experiments and existing literature supporting that a paragraph-long answer is preferred by users [^linetal2003]<sup>,</sup>[^jeonetal2006].
-There are no limitations to the number of note sentences cited.
+> <div style="margin-bottom:0.5em;"><strong><em>Clinical Specialty</em></strong></div>
+> Cardiology
+
+> <div style="margin-bottom:0.5em;"><strong><em>Answer</em></strong> (hover over a citation to highlight relevant sentences)</div>
+> <span class="answer-sentence">The patient was given Lasix for acute diastolic heart failure with symptoms including shortness of breath and lower extremity edema <span class="citation" data-evidence="evidence-2.1">[1,</span><span class="citation" data-evidence="evidence-2.4">4]</span>.</span>
+> <span class="answer-sentence">The patient was given 8 liters of fluid to help maintain his blood pressure which contributed to his respiratory failure <span class="citation" data-evidence="evidence-2.5">[5,</span><span class="citation" data-evidence="evidence-2.6">6]</span>.</span>
+> <span class="answer-sentence">After the patient's heart failure was treated with Lasix, he showed improvement in shortness of breath and his oxygen requirement, and he only needed to remain on a small amount of oxygen for comfort <span class="citation" data-evidence="evidence-2.4">[4]</span>.</span>
+
+
+## Subtask 1: Question Interpretation
+
+Patient questions are often long and verbose, making it important to quickly identify the underlying information need.
+This subtask evaluates a system's ability to **transform a free-text, patient-authored question** into a clear and concise **clinician-interpreted question** that reflects how a clinician would query a smart electronic health record (EHR) system when preparing a response to the patient.
+
+* **Goal:**
+  * Generate a single, well-formed clinician question that captures the core clinical information need implied by the patient’s narrative, phrased as a query to an intelligent EHR system.
+* **Input:**
+  * Patient‑authored question (_Patient Question_)
+* **Expected output:**
+  * Clinician‑interpreted question that captures the main medical concern(s).
+
+<p style="margin-bottom: 1em;"><strong><em>Example #1</em></strong></p>
+
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Patient Question</em></strong></div>
+> Took my 59 yo father to ER ultrasound discovered he had an aortic aneurysm.
+> He had a salvage repair (tube graft).
+> Long surgery / recovery for couple hours then removed packs.
+> why did they do this surgery?????
+> After this time he spent 1 month in hospital now sent home.
+
+> <div style="margin-bottom:0.5em;"><strong><em>Target output – Clinician-Interpreted Question</em></strong></div>
+> Why did they perform the emergency salvage repair on him?
+
+> <div style="margin-bottom:0.5em;"><strong><em>Sample System Response</em></strong> (Good)</div>
+> What was the indication for emergent surgical repair for his aortic aneurysm?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (Bad – generic)</div>
+> What is the purpose of salvage repair for aortic aneurysm treatment?
+
+<p style="margin-bottom: 1em;"><strong><em>Example #2</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Patient Question</em></strong></div>
+> I just wrote about my dad given multiple shots of lasciks after he was already so swelled his shin looked like it would burst open.
+> Why would they give him so much.
+> He was on oxygen and they took him off of the higher flow rate.
+
+> <div style="margin-bottom:0.5em;"><strong><em>Target output – Clinician-Interpreted Question</em></strong></div>
+> Why was he given lasix and his oxygen flow rate was reduced?
+
+> <div style="margin-bottom:0.5em;"><strong><em>Sample System Response</em></strong> (Good)</div>
+> Why were multiple doses of lasix administered despite decreased oxygen requirements and swelling?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (Ok – generic/malformed)</div>
+> Lasix dosage protocol for severe edema with oxygen therapy?
+
+### More details
+
+* The generated question should be concise (restricted to **15 words**).
+* The question should focus on what information or rationale the clinician needs from the record to answer the patient question.
+* The clinician-interpreted question should preserve the patient's core information need and **avoid introducing new clinical facts** not present in the patient narrative.
+
+## Subtask 2: Evidence Identification
+
+Clinical notes are lengthy and provide rich context across multiple problems and events.
+This subtask evaluates a system's ability to identify the **minimal set of note sentences** that provide the clinical evidence needed to answer a patient's question.
+
+* **Goal:**
+  * Identify the clinically relevant sentence(s) in the note excerpt that support answering the question.
+
+* **Input:**
+  * Patient‑authored question (_Patient Question_)
+  * Clinician‑interpreted question (_Clinician‑Interpreted Question_)
+  * Clinical note excerpt with sentences numbered (_Clinical Note Excerpt_)
+
+* **Expected output:**
+  * Set of sentence IDs from the note excerpt that constitute the relevant clinical evidence.
+
+<p style="margin-bottom: 1em;"><strong><em>Example #1</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Patient Question</em></strong></div>
+> I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge.
+> Doctor advised for ERCP.
+> My question is if the sludge was there does not any medication help in flushing it out?
+> Whether ERCP was the only cure?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Input – Clinician-Interpreted Question</em></strong></div>
+> Why was ERCP recommended over a medication-based treatment for CBD sludge?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Input – Clinical Note Excerpt</em></strong> (with sentences numbered)</div>
+> <span id="st2-evidence-1.1">**1:** During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.</span>
+> <span id="st2-evidence-1.2">**2:** However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.</span>
+> <span id="st2-evidence-1.3">**3:** Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.</span>
+> <span id="st2-evidence-1.4">**4:** The Vancomycin was discontinued.</span>
+> <p style="margin-top: 0.5em;"></p>
+> <span id="st2-evidence-1.5">**5:** On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.</span>
+> <span id="st2-evidence-1.6">**6:** On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.</span>
+> <span id="st2-evidence-1.7">**7:** As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.</span>
+> <span id="st2-evidence-1.8">**8:** At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.</span>
+
+> <div style="margin-bottom:0.5em;"><strong><em>Target output – Relevant Evidence Sentences</em></strong></div>
+> <span class="citation" data-evidence="st2-evidence-1.1">[1,</span>
+<span class="citation" data-evidence="st2-evidence-1.5">5,</span>
+<span class="citation" data-evidence="st2-evidence-1.6">6,</span>
+<span class="citation" data-evidence="st2-evidence-1.7">7]</span>
+
+> <div style="margin-bottom:0.5em;"><strong><em>Sample System Response</em></strong> (missing key evidence – Precision 1.00, Recall 0.50, F1 0.67)</div>
+> <span class="citation" data-evidence="st2-evidence-1.5">[5,</span>
+<span class="citation" data-evidence="st2-evidence-1.6">6]</span>
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (over-inclusive – Precision 0.50, Recall 1.00, F1 0.67)</div>
+> <span class="citation" data-evidence="st2-evidence-1.1">[1,</span>
+<span class="citation" data-evidence="st2-evidence-1.2">2,</span>
+<span class="citation" data-evidence="st2-evidence-1.3">3,</span>
+<span class="citation" data-evidence="st2-evidence-1.4">4,</span>
+<span class="citation" data-evidence="st2-evidence-1.5">5,</span>
+<span class="citation" data-evidence="st2-evidence-1.6">6,</span>
+<span class="citation" data-evidence="st2-evidence-1.7">7,</span>
+<span class="citation" data-evidence="st2-evidence-1.8">8]</span>
+
+### More details
+
+* Evidence is labeled at the sentence level within the clinical note excerpt.
+* Participants may use one or both question variants (patient question and/or clinician-interpreted question) to identify evidence.
+  * Participants may also use their own system-generated clinician-interpreted question from Subtask 1 as the query for this subtask.
+* The entire clinical note excerpt may not be required to answer the patient question. Thus, selecting all sentences is not mandatory.
+* The selected evidence should be **minimal and sufficient** for answering the question.
+* Some questions may not be fully answerable from the provided excerpt. This is a natural scenario and a step toward answering questions using the whole EHR. Systems should still select the best-supported sentences when partial evidence exists.
+
+## Subtask 3: Answer Generation
+
+This subtask evaluates a system's ability to **generate an answer** grounded in the provided clinical note excerpt.
+
+* **Goal:**
+  * Generate a text answer to the patient's question using only information supported by the clinical note.
+
+* **Input:**
+  * Patient‑authored question (_Patient Question_)
+  * Clinician‑interpreted question (_Clinician‑Interpreted Question_)
+  * Clinical note excerpt (_Clinical Note Excerpt_)
+
+* **Expected output:**
+  * A natural-language answer that addresses the patient's question and remains grounded in the note.
+
+<p style="margin-bottom: 1em;"><strong><em>Example #1</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Patient Question</em></strong></div>
+> I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge.
+> Doctor advised for ERCP.
+> My question is if the sludge was there does not any medication help in flushing it out?
+> Whether ERCP was the only cure?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Input – Clinician-Interpreted Question</em></strong></div>
+> Why was ERCP recommended over a medication-based treatment for CBD sludge?
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Input – Clinical Note Excerpt</em></strong> (with sentences numbered)</div>
+> (See Example Case #1 above.)
+
+> <div style="margin-bottom:0.5em;"><strong><em>Target output – Answer</em></strong> (without citations)</div>
+> <span class="answer-sentence">An endoscopic retrograde cholangiopancreatography, ERCP, was recommended to place a common bile duct stent.</span>
+> <span class="answer-sentence">This stent was placed to allow drainage of the biliary obstruction which was caused by stones and sludge.</span>
+> <span class="answer-sentence">Due to no improvement in liver function, the patient needed a repeat ERCP.</span>
+> <span class="answer-sentence">The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge.</span>
+> <span class="answer-sentence">The stones and stent were successfully removed during this procedure by performing a sphincterotomy.</span>
+
+> <div style="margin-bottom:0.5em;"><strong><em>Sample System Response</em></strong> (bad – generic/not grounded)</div>
+> Sometimes bile duct sludge is treated with observation or medications, but procedures like ERCP are commonly recommended when symptoms are severe or there is concern for blockage. ERCP lets clinicians look at the ducts and place a stent to help bile flow, and they may repeat the procedure if tests do not improve. Decisions depend on overall risk, lab trends, and how the patient responds to initial treatment.
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (ok – some grounding but mostly generic)</div>
+> ERCP is often used when sludge or stones are blocking the common bile duct, because it can relieve obstruction and improve drainage. In the note, a bile duct stent was placed to help drainage, and a repeat ERCP was performed when labs continued to worsen. If medications are unlikely to clear a mechanical blockage, endoscopic treatment can allow direct removal of stones/sludge once it is safe to do so.
+
+
+### More details
+  * The generated answer should be limited to **75 words**, which roughly correspond to 5 sentences. This is based on our observations from the baseline experiments and existing literature supporting that a paragraph-long answer is preferred by users [^linetal2003]<sup>,</sup>[^jeonetal2006].
+  * Participants may use one or both question variants (patient question and/or clinician-interpreted question) to generate an answer.
+    * Participants may also use their own system-generated clinician-interpreted question from Subtask 1 as the query for this subtask.
+  * The model must only make use of the provided inputs (questions and note excerpts) to generate an answer.
+  * The clinical note excerpt provided may not fully answer the question. In such cases, systems should **avoid speculation** and provide a faithful response consistent with the clinical evidence.
+  * The answers should be in the professional register to better match the contents of the clinical notes. Simplification of answers to lay language is assumed to be performed later and is not the focus of this task.
+  * Questions may require additional world knowledge to answer, but no external knowledge should be explicitly given to the model (e.g., no external retrieval or injected reference text), at least for the required “no-external-knowledge” run.
+  * Participants must submit at least one run (out of up to three) that follows the guidelines prohibiting **external knowledge**.
+  * Participants may use extra data (public or non-public), but should clearly describe any additional data and methodology in their system description.
+
+
+## Subtask 4: Evidence Alignment
+
+Grounded EHR QA requires not only producing an answer, but also **explicitly showing where in the EHR the answer comes from**.
+This subtask evaluates a system's ability to **align each answer sentence** to the specific supporting sentence(s) in the clinical note excerpt.
+
+* **Goal:**
+  * For each answer sentence, identify the clinical note sentence(s) that support it.
+
+* **Input:**
+  * Patient‑authored question (_Patient Question_)
+  * Clinical note excerpt with numbered sentences (_Clinical Note Excerpt_)
+  * Answer text to be grounded (Reference _Answer_)
+
+* **Expected output:**
+  * For each answer sentence, a set of supporting evidence sentence numbers from the clinical note excerpt.
+
+<p style="margin-bottom: 1em;"><strong><em>Example #1</em></strong></p>
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Patient Question</em></strong></div>
+> I had severe abdomen pain and was hospitalised for 15 days in ICU, diagnoised with CBD sludge.
+> Doctor advised for ERCP.
+> My question is if the sludge was there does not any medication help in flushing it out?
+> Whether ERCP was the only cure?
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Clinician-Interpreted Question</em></strong></div>
+> Why was ERCP recommended over a medication-based treatment for CBD sludge?
+> <div style="margin-bottom:0.5em;"><strong><em>Input – Clinical Note Excerpt</em></strong> (with sentences numbered)</div>
+> <span id="st4-evidence-1.1">**1:** During the ERCP a pancreatic stent was required to facilitate access to the biliary system (removed at the end of the procedure), and a common bile duct stent was placed to allow drainage of the biliary obstruction caused by stones and sludge.</span>
+> <span id="st4-evidence-1.2">**2:** However, due to the patient's elevated INR, no sphincterotomy or stone removal was performed.</span>
+> <span id="st4-evidence-1.3">**3:** Frank pus was noted to be draining from the common bile duct, and post-ERCP it was recommended that the patient remain on IV Zosyn for at least a week.</span>
+> <span id="st4-evidence-1.4">**4:** The Vancomycin was discontinued.</span>
+> <p style="margin-top: 0.5em;"></p>
+> <span id="st4-evidence-1.5">**5:** On hospital day 4 (post-procedure day 3) the patient returned to ERCP for re-evaluation of her biliary stent as her LFTs and bilirubin continued an upward trend.</span>
+> <span id="st4-evidence-1.6">**6:** On ERCP the previous biliary stent was noted to be acutely obstructed by biliary sludge and stones.</span>
+> <span id="st4-evidence-1.7">**7:** As the patient's INR was normalized to 1.2, a sphincterotomy was safely performed, with removal of several biliary stones in addition to the common bile duct stent.</span>
+> <span id="st4-evidence-1.8">**8:** At the conclusion of the procedure, retrograde cholangiogram was negative for filling defects.</span>
+
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Input – Answer</em></strong> (with sentences numbered and no citations)</div>
+> <span class="answer-sentence">**1:** An endoscopic retrograde cholangiopancreatography, ERCP, was recommended to place a common bile duct stent.</span>
+> <span class="answer-sentence">**2:** This stent was placed to allow drainage of the biliary obstruction which was caused by stones and sludge.</span>
+> <span class="answer-sentence">**3:** Due to no improvement in liver function, the patient needed a repeat ERCP.</span>
+> <span class="answer-sentence">**4:** The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge.</span>
+> <span class="answer-sentence">**5:** The stones and stent were successfully removed during this procedure by performing a sphincterotomy.</span>
+
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Target Output – Answer</em></strong> (with citations)</div>
+> <span class="answer-sentence">**1:** An endoscopic retrograde cholangiopancreatography, ERCP, was recommended to place a common bile duct stent <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">**2:** This stent was placed to allow drainage of the biliary obstruction which was caused by stones and sludge <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">**3:** Due to no improvement in liver function, the patient needed a repeat ERCP <span class="citation" data-evidence="st4-evidence-1.5">[5]</span>.</span>
+> <span class="answer-sentence">**4:** The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge <span class="citation" data-evidence="st4-evidence-1.6">[6]</span>.</span>
+> <span class="answer-sentence">**5:** The stones and stent were successfully removed during this procedure by performing a sphincterotomy <span class="citation" data-evidence="st4-evidence-1.7">[7]</span>.</span>
+
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (under-citing – Micro Precision 0.75, Recall 0.6, F1 0.67)</div>
+> <span class="answer-sentence">**1:** An endoscopic [...] bile duct stent <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">**2:** This stent was placed [...] caused by stones and sludge.</span>
+> <span class="answer-sentence">**3:** Due to no improvement [...] repeat ERCP <span class="citation" data-evidence="st4-evidence-1.5">[5,</span><span class="citation" data-evidence="st4-evidence-1.6">6]</span>.</span>
+> <span class="answer-sentence">**4:** The repeat ERCP [...] obstructed by stones and sludge <span class="citation" data-evidence="st4-evidence-1.6">[6]</span>.</span>
+> <span class="answer-sentence">**5:** The stones and stent [...] sphincterotomy.</span>
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (over-citing – Micro Precision 0.50, Recall 1.00, F1 0.67)</div>
+> <span class="answer-sentence">**1:** An endoscopic [...] bile duct stent <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
+> <span class="answer-sentence">**2:** This stent was placed [...] caused by stones and sludge <span class="citation" data-evidence="st4-evidence-1.1">[1,</span><span class="citation" data-evidence="st4-evidence-1.6">6]</span>.</span>
+> <span class="answer-sentence">**3:** Due to no improvement [...] repeat ERCP <span class="citation" data-evidence="st4-evidence-1.5">[5]</span>.</span>
+> <span class="answer-sentence">**4:** The repeat ERCP [...] obstructed by stones and sludge <span class="citation" data-evidence="st4-evidence-1.1">[1,</span><span class="citation" data-evidence="st4-evidence-1.5">5,</span><span class="citation" data-evidence="st4-evidence-1.6">6]</span>.</span>
+> <span class="answer-sentence">**5:** The stones and stent [...] sphincterotomy <span class="citation" data-evidence="st4-evidence-1.6">[6,</span><span class="citation" data-evidence="st4-evidence-1.7">7,</span><span class="citation" data-evidence="st4-evidence-1.8">8]</span>.</span>
+
+
+### More details
+* Participants may use one or both question variants (patient question and/or clinician-interpreted question) to support alignment decisions.
+  * Participants may also use their own system-generated clinician-interpreted question from Subtask 1 as additional question context for this subtask.
+* Alignment is performed at the **answer-sentence level**: each answer sentence links to zero, one, or multiple note sentences.
+* It is not mandatory to cite/align to all note sentences. Only align sentences that provide direct support.
+* Some answer sentences may be unsupported by the provided note excerpt.
+* There are no limitations on the number of note sentences that may be linked to a given answer sentence.
+* Alignments are **many-to-many**: one evidence sentence may support multiple answer sentences, and vice versa.
+* As with Subtask 3, at least one submitted run must follow the guideline prohibiting external knowledge; additional data is allowed but must be disclosed.
 
 
 ## Data
 
-The dataset consists of questions (inspired by real patient questions) and associated EHR data (derived from the MIMIC database[^mimic]) containing important clinical evidence to answer these questions. Each instance of the question-note pairs is referred to as a "case". Clinical note excerpts come pre-annotated with sentence numbers which must be used to cite the clinical evidence sentences in system responses. Each sentence is manually annotated with a "relevance" label to mark its importance in answering the given question as `"essential"`, `"supplementary"`, or `"not-relevant"`.
+The dataset consists of patient-authored questions (inspired by real patient questions) and associated clinical note excerpts (derived from the MIMIC database[^mimic]).
+Each data instance is referred to as a case and contains:
+* A free-text **_Patient Question_**
+* A concise and focused **_Clinician-Interpreted Question_** (used as the reference for Subtask 1)
+* A **_Clinical Note Excerpt_** segmented into numbered sentences (sentence IDs are used for grounding).
+  * Each note sentence is manually annotated with a relevance label to mark its importance in answering the patient question as `"essential"` / `"supplementary"` / `"not-relevant"`.
+* A reference clinician-authored **_Answer_** (used as the reference for Subtask 3).
+  * Each answer sentence is supported by zero or more sentences from the clinical note excerpt (used as the reference for Subtask 4).
+* **_Clinical Specialty_** of the case.
 
-The development set comes with the relevance keys. For the test set cases, the submissions should return a natural language answer with citations to the clinical note sentence numbers.
+**ID format.** Case IDs and sentence IDs are integers stored as strings (e.g., `"1"`, `"5"`).
+
+### Development set
+The development set includes the gold outputs needed to develop and/or validate systems for the subtasks (e.g., clinician-interpreted questions, sentence-level evidence labels, reference answers, and answer–evidence alignments).
+These are case IDs 1–20 under the "dev" directory at the PhysioNet repository.
+
+### Test set
+The test set provides the inputs (questions, note excerpts, and any required auxiliary fields) while withholding gold outputs.
+Participants submit predictions for any subset of subtasks they choose to attempt, following the formats defined in <a href="#system-submission" onclick="event.preventDefault(); document.querySelector('#system-submission').scrollIntoView({ behavior: 'smooth' });">System Submission</a>.
+
+#### Case usage by subtask (official evaluation)
+
+* Subtasks 1–3: case IDs **121–167**
+* Subtask 4: case IDs **21–167**
+
+
+#### Staged release plan for the test data
+
+To support the sequential schedule of the shared task, test inputs will be released in stages:
+
+* **January 19, 2026:** Subtask 1 test data release (patient questions only) for cases **121–167**
+* **January 26, 2026:** Subtasks 2–3 test data release (clinician-interpreted questions + clinical note excerpts) for cases **121–167**
+* **February 16, 2026:** Subtask 4 test data release for cases **21–167**, including the **reference answer text** (with sentences numbered) to be aligned to the clinical note excerpt.
+  * Sentence relevance labels are **not included** in the test data releases.
+
 
 ### Access
 
-The dataset is available on [PhysioNet](https://doi.org/10.13026/zzax-sy62). Please sign up for PhysioNet[^physionet] and complete the required training to access the dataset.
+The dataset is available on **[PhysioNet](https://doi.org/10.13026/zzax-sy62)**. Please sign up for PhysioNet[^physionet] and complete the required training to access the dataset.
 
 
 ## Evaluation
 
-Submissions will be evaluated based on their use of clinical evidence for grounding _("Factuality")_ and the relevance of the generated answers _("Relevance")_.
+Each subtask is evaluated independently using automatic metrics. Teams may participate in any subset of subtasks. There will be separate leaderboards for each of the subtasks.
 
-_Factuality_ will be assessed by calculating Precision, Recall, and F1 Scores between the cited evidence sentences in the generated answers and the manually annotated ground truth set of evidence sentences.
-Each note sentence is manually annotated with a `'relevance'` label to mark its importance in answering the given question as `'essential'`, `'supplementary'`, or `'not-relevant'`.
-Two variations of Citation F1 Scores will be calculated.
-In the _"strict"_ variation, only `'essential'` labels will be considered as answers.
-In the _"lenient"_ variation, both `'essential'` and `'supplementary'` labels will be considered as answers.
+### Subtask 1: Question Interpretation
 
-_Relevance_ will be evaluated by comparing the generated answer text with the ground truth `'essential'` note sentences and the question using the following evaluation metrics:
+Subtask 1 is evaluated by comparing the system-generated clinician-interpreted question to the reference clinician-interpreted question.
+Outputs that violate the length constraint (15 words) will be truncated to the first 15 words before scoring.
+We report the following automatic **text generation metrics**:
+
+* BLEU[^bleu]
+* ROUGE[^rouge]
+* BERTScore[^bertscore]
+* AlignScore[^alignscore]
+* MEDCON[^medcon]
+
+
+### Subtask 2: Evidence Identification
+
+Subtask 2 is evaluated by comparing the set of evidence sentence IDs predicted by the system to the ground truth evidence set.
+We report **Precision**, **Recall**, and **F1** over the predicted versus gold evidence sentences.
+
+Two variants are reported:
+* **Strict:** only sentences labeled `"essential"` are treated as gold evidence.
+* **Lenient:** systems predicting sentences labeled `"supplementary"` will not be penalized.
+
+
+### Subtask 3: Answer Generation
+
+Subtask 3 evaluates the quality of the generated answer text relative to the reference answer.
+We report the following automatic **text generation metrics**:
 
 * BLEU[^bleu]
 * ROUGE[^rouge]
@@ -161,55 +427,189 @@ _Relevance_ will be evaluated by comparing the generated answer text with the gr
 * AlignScore[^alignscore]
 * MEDCON[^medcon]
 
-The _Overall_ scores for the leaderboard will be the mean of _Factuality_ (Strict Citation F1 Scores) and _Relevance_ (combination of all the normalized scores) scores.
-The scoring script is available on GitHub at [https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation](https://github.com/soni-sarvesh/archehr-qa/tree/main/evaluation).
+
+### Subtask 4: Answer–Evidence Alignment
+
+Subtask 4 is evaluated by comparing the system's predicted alignments between answer sentences and note sentences to the ground truth alignments.
+We report **micro-averaged Precision**, **Recall**, and **F1** over predicted alignment links.
+
+* A predicted link is a pair *(answer sentence k → note sentence i)*.
+* Over-citing is penalized: extra links increase false positives and reduce micro-Precision (and thus micro-F1).
+
+
+### Scoring scripts
+
+The scoring scripts will be released soon.
 
 
 ## System Submission
 
-Please visit the competition on Codabench at [https://www.codabench.org/competitions/5302/](https://www.codabench.org/competitions/5302/) to submit system responses.
-Each team may make up to three successful submissions to Codabench[^codabench] in total.
-Note that the automatically computed scores on Codabench are not final, however, they should be fairly close to the final scores that will be computed after reconciliation of double annotations.
-Please nominate your best submission on Codabench by pushing it to the leaderboard.
+Please visit the respective **Codabench competitions (one per subtask)** to submit system outputs.
+Teams may participate in any subset of subtasks (1–4).
+
+* Each team may make **up to three successful submissions per subtask** to Codabench in total.
+* Please nominate your best submission on each Codabench competition by pushing it to the leaderboard.
+* We ask teams with multiple members to nominate a single member to make all submissions (to avoid duplicate accounts/submissions and confusion).
+
+**Links:** The Codabench competition links for the subtasks will be released soon.
+
+The required submission formats for each subtask are as follows.
+
+### Submission package
+
+All subtasks use results submissions only (no code execution).
+You will upload a **single `.zip` archive** containing your predictions.
+
+Your zip file must be structured as:
+
+```pgsql
+submission.zip
+└── submission.json
+```
+
+`submission.json` must be a valid JSON file containing a single array of objects, with one object per case in the evaluation split for that subtask:
+
+```json
+[
+  {
+    "case_id": "1",
+    "prediction": "..."
+  }
+]
+```
+
+Each object must include:
+
+* `case_id` (string): the case identifier from the dataset.
+* `prediction`: the subtask-specific output (format depends on the subtask; see below).
+
+Because each Codabench competition is subtask-specific, the validator will expect the prediction field to match the format for that subtask.
+
+### Required formats by subtask
+
+#### Subtask 1: Question Interpretation
+
+For Subtask 1, `prediction` must be a string containing the clinician-interpreted question (≤ 15 words).
+
+Example `submission.json`
+
+```json
+[
+  {
+    "case_id": "1",
+    "prediction": "Why was ERCP recommended over medication-based treatment for CBD sludge?"
+  }
+]
+```
+
+#### Subtask 2: Evidence Identification
+
+For Subtask 2, `prediction` must be an array of strings, where each string is a sentence ID from the provided clinical note excerpt (e.g., `"1"`, `"5"`).
+
+Example `submission.json`
+
+```json
+[
+  {
+    "case_id": "1",
+    "prediction": ["1", "5", "6", "7"]
+  }
+]
+```
+
+#### Subtask 3: Answer Generation
+
+For Subtask 3, `prediction` must be a string containing the generated answer (≤ 75 words).
+
+Example `submission.json`
+
+```json
+[
+  {
+    "case_id": "1",
+    "prediction": "ERCP was used to relieve a bile duct obstruction caused by stones and sludge by placing a common bile duct stent. Because liver tests and bilirubin continued to worsen, the patient required a repeat ERCP, which found the stent obstructed by sludge and stones. Once the INR normalized, a sphincterotomy was performed and stones were removed, improving drainage."
+  }
+]
+```
+
+#### Subtask 4: Answer–Evidence Alignment
+
+For Subtask 4, `prediction` must be an array of objects representing sentence-level alignments between the input answer sentences and the note excerpt sentences.
+
+Example `submission.json`
+
+```json
+[
+  {
+    "case_id": "1",
+    "prediction": [
+      {
+        "answer_id": "1",
+        "evidence_id": ["1"]
+      },
+      {
+        "answer_id": "2",
+        "evidence_id": ["5", "6"]
+      }
+    ]
+  }
+]
+```
+
+Each element in `prediction` must contain:
+
+* answer_id (string): the answer sentence ID from the input answer text.
+* evidence_id (array of strings): the list of note sentence IDs that support that answer sentence.
+  * Use an empty list (`[` `]`) for unsupported answer sentences
 
 
 ## Paper Submission
-All shared task participants are invited to submit a paper describing their systems to the Proceedings of the 24th Workshop on Biomedical Natural Language Processing (BioNLP) at ACL 2025.
-Only short papers will be accepted for shared task participants.
-The shared task papers will go through a faster review process.
+All shared task participants are invited to submit a paper describing their systems to the Proceedings of the Third Workshop on Patient-Oriented Language Processing (CL4Health) at LREC 2026.
+Shared task papers will go through a faster review process.
 
-_Format_:
-Unless otherwise specified below, please adhere to the ACL 2025 short paper guidelines. For more details, refer to the ACL [Call for Papers](https://2025.aclweb.org/calls/main_conference_papers/#paper-submission-details).
-Briefly, the papers may consist of four (4) pages of content with unlimited space after the conclusion for limitations (required), ethical considerations (optional), and references (see the [guideline](https://aclrollingreview.org/cfp#short-papers) for full details).
-Papers must be submitted in a non-anonymized format (i.e., with author names included).
-The paper titles must follow the format: “{TEAM_NAME} at ArchEHR-QA 2025: {DESCRIPTIVE_TITLE}”, where the descriptive title reflects your proposed approach.
-The Overleaf LaTeX template can be found [here](https://www.overleaf.com/latex/templates/association-for-computational-linguistics-acl-conference/jvxskxpnznfj).
+### Paper length (based on participation)
+* If you participate in **exactly one** subtask, we encourage a **short paper**.
+* If you participate in **more than one** subtask, you may submit either a short paper or a **long paper**.
 
-_Submissions_:
-All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/acl2025/BioNLP2025-ST](https://softconf.com/acl2025/BioNLP2025-ST).
-On the submission page, please select `"ArchEHR_QA"` using the Task dropdown.
-Regardless of participants' decision to submit a paper, they must submit a short one-paragraph summary of their best system to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov) to be included in the shared task overview paper.
+### Format
+Unless otherwise specified below, please follow the official LREC 2026 paper guidelines. For details, refer to the LREC [Author's Kit](https://lrec2026.info/authors-kit/).
 
-_References_:
+* **Length:** Papers may be submitted as either a **short paper (4 pages)** or a **long paper (8 pages)** (content pages). Unlimited space is allowed after the conclusion for limitations (encouraged), ethical considerations (encouraged), and references.
+* **Anonymity:** Submissions must be **non-anonymized** (i.e., include author names and affiliations).
+* **Title format:** Paper titles must follow: “{TEAM_NAME} at ArchEHR-QA 2026: {DESCRIPTIVE_TITLE}”, where the descriptive title reflects your approach.
+* **Template:** The Overleaf LaTeX template is available [here](https://www.overleaf.com/project/6887c0280bfaab6e3e8bd0bc).
+
+
+### Submissions
+All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/lrec2026/CL4Health/](https://softconf.com/lrec2026/CL4Health/).
+Regardless of participants' decision to submit a paper, they must submit a **short one-paragraph summary (about 75 words)** of their best system for each subtask they participated in to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov) to be included in the shared task overview paper.
+
+### References
 We ask participants to ensure that their paper includes proper citations to both the shared task overview paper and the dataset paper.
 
 
 **Overview _(tentative)_:**
 ```bibtex
-@inproceedings{soni-etal-2025-archehr-qa,
-  title = "Overview of the ArchEHR-QA 2025 Shared Task on Grounded Question Answering from Electronic Health Records",
+@inproceedings{soni-etal-2026-archehr-qa,
+  title = "Overview of the ArchEHR-QA 2026 Shared Task on Grounded Question Answering from Electronic Health Records",
   author = "Soni, Sarvesh and Demner-Fushman, Dina",
-  booktitle = "The 24th Workshop on Biomedical Natural Language Processing and BioNLP Shared Tasks",
-  month = aug,
-  year = "2025",
-  address = "Vienna, Austria",
-  publisher = "Association for Computational Linguistics",
+  booktitle = "Proceedings of the Third Workshop on Patient-Oriented Language Processing (CL4Health)",
+  year = "2026",
+  address = "Palma, Mallorca (Spain)",
+  publisher = "ELRA",
 }
 ```
 
 **Dataset:**
 ```bibtex
-coming soon...
+@article{soni-demner-fushman-2025-dataset,
+  title={A Dataset for Addressing Patient's Information Needs related to Clinical Course of Hospitalization},
+  author = {Soni, Sarvesh and Demner-Fushman, Dina},
+  year = "2025",
+  journal={arXiv preprint arXiv:2506.04156},
+  doi = {10.48550/arXiv.2506.04156},
+  publisher = {arXiv},
+}
 ```
 
 

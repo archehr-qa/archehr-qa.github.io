@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="dfDY1Wrjh0onuevJRarBXqhQVjgd42zWxn5WqEOMxHc">
-    <title>{{ site.short_title | default: site.github.repository_name }}</title>
+    <title>{{ page.short_title | default: site.short_title | default: site.github.repository_name }}</title>
 
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
@@ -15,6 +15,7 @@
     {% include head-custom.html %}
     <script src="{{ '/assets/js/citations.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/open_new_tab.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/section_highlight.js' | relative_url }}"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D06ZCCCHZ"></script>
@@ -29,13 +30,15 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <h1><a href="{{ page.url | relative_url }}">{{ page.site_title | default: site.title | default: site.github.repository_name }}</a></h1>
 
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
+        {% assign _logo = page.logo | default: '' %}
+        {% if _logo != '' %}
+          <img src="{{ _logo | relative_url }}" alt="Logo" />
+          <br><br>
         {% endif %}
 
-        <h3>{{ site.description | default: site.github.project_tagline }}</h3>
+        <h3>{{ page.description | default: site.description | default: site.github.project_tagline }}</h3>
 
         <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">Home</a>
         <br>
@@ -47,10 +50,18 @@
           {% assign third_char = stripped_line | slice: 2, 1 %}
           {% if stripped_line.size >= 3 and first_char == '#' and second_char == '#' and third_char == ' ' %}
             {% assign heading = stripped_line | remove: '## ' | strip %}
-            <a href="#{{ heading | slugify }}" onclick="event.preventDefault(); document.querySelector('#{{ heading | slugify }}').scrollIntoView({ behavior: 'smooth' });">{{ heading }}</a><br>
+            {% assign heading_prefix = heading | slice: 0, 7 %}
+              <a {% if heading_prefix == 'Subtask' %}class="subtask-link"{% endif %} href="#{{ heading | slugify }}" onclick="event.preventDefault(); document.querySelector('#{{ heading | slugify }}').scrollIntoView({ behavior: 'smooth' }); this.blur();">{{ heading }}</a><br>
           {% endif %}
         {% endfor %}
-
+        <br>
+        {% assign _page_url = page.url | default: '' %}
+        {% if page.url == '/' %}
+        <a href="{{ '/2025/' | relative_url }}">ArchEHR-QA 2025 (Previous Year)</a>
+        {% elsif _page_url == '/2025' or _page_url == '/2025/' or _page_url contains '/2025/' %}
+        <a href="{{ '/' | relative_url }}">ArchEHR-QA 2026 (Current)</a>
+        {% endif %}
+        <br>
 
         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
