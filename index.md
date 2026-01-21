@@ -5,6 +5,7 @@
 ## News
 
 * **January 20, 2026**: Subtask 1 test set and scoring script are now available on GitHub: [https://github.com/soni-sarvesh/archehr-qa-2026](https://github.com/soni-sarvesh/archehr-qa-2026).
+* **January 20, 2026**: Registration is now open. Please fill out the participant registration form: [https://forms.gle/JkkE2g3rvyXMsTp99](https://forms.gle/JkkE2g3rvyXMsTp99).
 
 ## Introduction
 
@@ -442,13 +443,16 @@ We report **micro-averaged Precision**, **Recall**, and **F1** over predicted al
 
 ### Scoring scripts
 
-The scoring scripts will be released soon.
+Subtask 1 scoring script is available on GitHub at [https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation](https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation).
 
 
 ## System Submission
 
 Please visit the respective **Codabench competitions (one per subtask)** to submit system outputs.
 Teams may participate in any subset of subtasks (1–4).
+
+Before submitting, please register your team using our participant registration form: [https://forms.gle/JkkE2g3rvyXMsTp99](https://forms.gle/JkkE2g3rvyXMsTp99).
+We will use this information to help match team registrations to Codabench submissions and for participation-related shared task communications.
 
 * Each team may make **up to three successful submissions per subtask** to Codabench in total.
 * Please nominate your best submission on each Codabench competition by pushing it to the leaderboard.
