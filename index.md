@@ -2,6 +2,10 @@
 
 ---
 
+## News
+
+* **January 20, 2026**: Subtask 1 test set and scoring script are now available on GitHub: [https://github.com/soni-sarvesh/archehr-qa-2026](https://github.com/soni-sarvesh/archehr-qa-2026).
+
 ## Introduction
 
 The ArchEHR-QA (“Archer”) shared task focuses on **answering patients' health-related questions using their own electronic health records (EHRs)**.
@@ -398,7 +402,6 @@ Subtask 1 is evaluated by comparing the system-generated clinician-interpreted q
 Outputs that violate the length constraint (15 words) will be truncated to the first 15 words before scoring.
 We report the following automatic **text generation metrics**:
 
-* BLEU[^bleu]
 * ROUGE[^rouge]
 * BERTScore[^bertscore]
 * AlignScore[^alignscore]
