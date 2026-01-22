@@ -4,6 +4,7 @@
 
 ## News
 
+* **January 22, 2026:** Subtask 1 CodaBench link is now live for submissions (please complete the required submission form for each run): [https://www.codabench.org/competitions/12865/](https://www.codabench.org/competitions/12865/).
 * **January 20, 2026**: Subtask 1 test set and scoring script are now available on GitHub: [https://github.com/soni-sarvesh/archehr-qa-2026](https://github.com/soni-sarvesh/archehr-qa-2026).
 * **January 20, 2026**: Registration is now open. Please fill out the participant registration form: [https://forms.gle/JkkE2g3rvyXMsTp99](https://forms.gle/JkkE2g3rvyXMsTp99).
 
@@ -458,7 +459,8 @@ We will use this information to help match team registrations to Codabench submi
 * Please nominate your best submission on each Codabench competition by pushing it to the leaderboard.
 * We ask teams with multiple members to nominate a single member to make all submissions (to avoid duplicate accounts/submissions and confusion).
 
-**Links:** The Codabench competition links for the subtasks will be released soon.
+**Links:** Subtask 1 (Question Interpretation) CodaBench link: [https://www.codabench.org/competitions/12865/](https://www.codabench.org/competitions/12865/).
+Links for the remaining subtasks will be released soon.
 
 The required submission formats for each subtask are as follows.
 
