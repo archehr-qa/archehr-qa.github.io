@@ -357,7 +357,7 @@ Each data instance is referred to as a case and contains:
 * A free-text **_Patient Question_**
 * A concise and focused **_Clinician-Interpreted Question_** (used as the reference for Subtask 1)
 * A **_Clinical Note Excerpt_** segmented into numbered sentences (sentence IDs are used for grounding).
-  * Each note sentence is manually annotated with a relevance label to mark its importance in answering the patient question as `"essential"` / `"supplementary"` / `"not-relevant"`.
+  * Each note sentence is manually annotated with a relevance label to mark its importance in answering the patient question as `"essential"` / `"supplementary"` / `"not-relevant"` (used as the reference for Subtask 2).
 * A reference clinician-authored **_Answer_** (used as the reference for Subtask 3).
   * Each answer sentence is supported by zero or more sentences from the clinical note excerpt (used as the reference for Subtask 4).
 * **_Clinical Specialty_** of the case.
