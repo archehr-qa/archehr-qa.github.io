@@ -288,6 +288,7 @@ This subtask evaluates a system's ability to **align each answer sentence** to t
 
 * **Input:**
   * Patient‑authored question (_Patient Question_)
+  * Clinician‑interpreted question (_Clinician‑Interpreted Question_)
   * Clinical note excerpt with numbered sentences (_Clinical Note Excerpt_)
   * Answer text to be grounded (Reference _Answer_)
 
