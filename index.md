@@ -4,6 +4,7 @@
 
 ## News
 
+* **January 30, 2026:** Subtasks 2–3 test dataset released to registered participants. Evaluation (scoring) scripts for all subtasks are now available on GitHub.
 * **January 27, 2026:** Due to a CodaBench outage, the Subtask 1 submission deadline has been extended by 24 hours (now due **Jan 27, 11:59 PM AoE**). Subtasks 2–3 test data will be released after the Subtask 1 deadline.
 * **January 22, 2026:** Subtask 1 CodaBench link is now live for submissions (please complete the required submission form for each run): [https://www.codabench.org/competitions/12865/](https://www.codabench.org/competitions/12865/).
 * **January 20, 2026**: Subtask 1 test set and scoring script are now available on GitHub: [https://github.com/soni-sarvesh/archehr-qa-2026](https://github.com/soni-sarvesh/archehr-qa-2026).
@@ -21,11 +22,11 @@ ArchEHR-QA addresses this gap by targeting the problem of producing answers to p
 * First call for participation: January 2 (Friday), 2026
 * **Release of the development dataset:** January 2 (Friday), 2026
 * **Release of the test dataset:**
-  * Subtask 1: January 19 (Monday), 2026
-  * Subtasks 2–3: January 26 (Monday), 2026
+  * Subtask 1: January 20 (Tuesday), 2026
+  * Subtasks 2–3: January 30 (Friday), 2026
   * Subtask 4: February 16 (Monday), 2026
 * **Submission of system responses:**
-  * Subtask 1: January 26 (Monday), 2026
+  * Subtask 1: January 27 (Tuesday), 2026
   * Subtasks 2–3: February 16 (Monday), 2026
   * Subtask 4: March 2 (Monday), 2026
 * **Submission of shared task papers (optional):** March 13 (Friday), 2026
