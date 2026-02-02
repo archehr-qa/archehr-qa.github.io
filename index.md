@@ -329,13 +329,13 @@ This subtask evaluates a system's ability to **align each answer sentence** to t
 > <span class="answer-sentence">**4:** The repeat ERCP showed that the biliary stent placed in the first ERCP was obstructed by stones and sludge <span class="citation" data-evidence="st4-evidence-1.6">[6]</span>.</span>
 > <span class="answer-sentence">**5:** The stones and stent were successfully removed during this procedure by performing a sphincterotomy <span class="citation" data-evidence="st4-evidence-1.7">[7]</span>.</span>
 
-> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (under-citing – Micro Precision 0.75, Recall 0.6, F1 0.67)</div>
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (under-citing – Precision 0.75, Recall 0.6, F1 0.67)</div>
 > <span class="answer-sentence">**1:** An endoscopic [...] bile duct stent <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
 > <span class="answer-sentence">**2:** This stent was placed [...] caused by stones and sludge.</span>
 > <span class="answer-sentence">**3:** Due to no improvement [...] repeat ERCP <span class="citation" data-evidence="st4-evidence-1.5">[5,</span><span class="citation" data-evidence="st4-evidence-1.6">6]</span>.</span>
 > <span class="answer-sentence">**4:** The repeat ERCP [...] obstructed by stones and sludge <span class="citation" data-evidence="st4-evidence-1.6">[6]</span>.</span>
 > <span class="answer-sentence">**5:** The stones and stent [...] sphincterotomy.</span>
-> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (over-citing – Micro Precision 0.50, Recall 1.00, F1 0.67)</div>
+> <div style="margin-bottom:0.5em;margin-top:1em;"><strong><em>Sample System Response</em></strong> (over-citing – Precision 0.50, Recall 1.00, F1 0.67)</div>
 > <span class="answer-sentence">**1:** An endoscopic [...] bile duct stent <span class="citation" data-evidence="st4-evidence-1.1">[1]</span>.</span>
 > <span class="answer-sentence">**2:** This stent was placed [...] caused by stones and sludge <span class="citation" data-evidence="st4-evidence-1.1">[1,</span><span class="citation" data-evidence="st4-evidence-1.6">6]</span>.</span>
 > <span class="answer-sentence">**3:** Due to no improvement [...] repeat ERCP <span class="citation" data-evidence="st4-evidence-1.5">[5]</span>.</span>
@@ -439,10 +439,10 @@ We report the following automatic **text generation metrics**:
 ### Subtask 4: Answer–Evidence Alignment
 
 Subtask 4 is evaluated by comparing the system's predicted alignments between answer sentences and note sentences to the ground truth alignments.
-We report **micro-averaged Precision**, **Recall**, and **F1** over predicted alignment links.
+We report **Precision**, **Recall**, and **F1** over predicted alignment links.
 
 * A predicted link is a pair *(answer sentence k → note sentence i)*.
-* Over-citing is penalized: extra links increase false positives and reduce micro-Precision (and thus micro-F1).
+* Over-citing is penalized: extra links increase false positives and reduce Precision (and thus F1).
 
 
 ### Scoring scripts
