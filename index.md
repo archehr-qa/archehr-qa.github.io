@@ -386,8 +386,8 @@ Participants submit predictions for any subset of subtasks they choose to attemp
 
 To support the sequential schedule of the shared task, test inputs will be released in stages:
 
-* **January 19, 2026:** Subtask 1 test data release (patient questions only) for cases **121–167**
-* **January 26, 2026:** Subtasks 2–3 test data release (clinician-interpreted questions + clinical note excerpts) for cases **121–167**
+* **January 20, 2026:** Subtask 1 test data release (patient questions only) for cases **121–167**
+* **January 30, 2026:** Subtasks 2–3 test data release (clinician-interpreted questions + clinical note excerpts) for cases **121–167**
 * **February 16, 2026:** Subtask 4 test data release for cases **21–167**, including the **reference answer text** (with sentences numbered) to be aligned to the clinical note excerpt.
   * Sentence relevance labels are **not included** in the test data releases.
 
