@@ -4,6 +4,7 @@
 
 ## News
 
+* **February 17, 2026:** Due to technical submission issues, the Subtasks 2–3 submission deadline has been extended by 2 days (new deadline: **Feb 19, 11:59 PM AoE**).
 * **February 11, 2026:** Subtasks 2–3 Codabench links are now live for submissions. Subtask 2: [codabench.org/competitions/13526/](https://www.codabench.org/competitions/13526/); Subtask 3: [codabench.org/competitions/13527/](https://www.codabench.org/competitions/13527/).
 * **January 30, 2026:** Subtasks 2–3 test dataset released to registered participants. Evaluation (scoring) scripts for all subtasks are now available on [GitHub](https://github.com/soni-sarvesh/archehr-qa-2026).
 * **January 27, 2026:** Due to a Codabench outage, the Subtask 1 submission deadline has been extended by 24 hours (now due **Jan 27, 11:59 PM AoE**). Subtasks 2–3 test data will be released after the Subtask 1 deadline.
