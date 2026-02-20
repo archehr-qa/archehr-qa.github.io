@@ -596,6 +596,8 @@ Unless otherwise specified below, please follow the official LREC 2026 paper gui
 
 ### Submissions
 All submissions will go through the Softconf/START Conference Manager at [https://softconf.com/lrec2026/CL4Health/](https://softconf.com/lrec2026/CL4Health/).
+When submitting your paper, on the **Submission Page** please select **Submission Type → Shared Task (Archer)** from the dropdown.
+
 Regardless of participants' decision to submit a paper, they must submit a **short one-paragraph summary (about 75 words)** of their best system for each subtask they participated in to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov) to be included in the shared task overview paper.
 
 ### References
