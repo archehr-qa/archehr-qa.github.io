@@ -4,6 +4,7 @@
 
 ## News
 
+* **March 2, 2026:** Due to technical submission issues, the Subtask 4 submission deadline has been extended by 2 days (new deadline: **March 4, 11:59 PM AoE**).
 * **February 20, 2026:** Subtask 4 test dataset released to registered participants. Submissions are now open on Codabench at [codabench.org/competitions/13528/](https://www.codabench.org/competitions/13528/).
 * **February 17, 2026:** Due to technical submission issues, the Subtasks 2–3 submission deadline has been extended by 2 days (new deadline: **Feb 18, 11:59 PM AoE**).
 * **February 11, 2026:** Subtasks 2–3 Codabench links are now live for submissions. Subtask 2: [codabench.org/competitions/13526/](https://www.codabench.org/competitions/13526/); Subtask 3: [codabench.org/competitions/13527/](https://www.codabench.org/competitions/13527/).
