@@ -620,13 +620,16 @@ We ask participants to ensure that their paper includes proper citations to both
 
 **Dataset:**
 ```bibtex
-@article{soni-demner-fushman-2025-dataset,
-  title={A Dataset for Addressing Patient's Information Needs related to Clinical Course of Hospitalization},
+@article{soni-demner-fushman-2026-dataset,
+  title = {A Dataset for Addressing Patient's Information Needs related to Clinical Course of Hospitalization},
   author = {Soni, Sarvesh and Demner-Fushman, Dina},
-  year = "2025",
-  journal={arXiv preprint arXiv:2506.04156},
-  doi = {10.48550/arXiv.2506.04156},
-  publisher = {arXiv},
+  journal = {Scientific Data},
+  year = {2026},
+  month = {02},
+  date = {2026-02-25},
+  doi = {10.1038/s41597-026-06639-z},
+  url = {https://doi.org/10.1038/s41597-026-06639-z},
+  issn = {2052-4463}
 }
 ```
 
