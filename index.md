@@ -35,7 +35,7 @@ ArchEHR-QA addresses this gap by targeting the problem of producing answers to p
   * Subtask 4: March 2 (Monday), 2026
 * **Submission of shared task papers (optional):** March 13 (Friday), 2026
 * Notification of acceptance: March 24 (Tuesday), 2026
-* Camera-ready system papers due: March 31 (Tuesday), 2026
+* Camera-ready system papers due: March 28 (Saturday), 2026
 * **CL4Health Workshop Date:** May 12 (Tuesday), 2026
 
 All deadlines are **11:59 PM ("Anywhere on Earth")**.
