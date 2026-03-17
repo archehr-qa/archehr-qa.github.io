@@ -593,7 +593,7 @@ Unless otherwise specified below, please follow the official LREC 2026 paper gui
 * **Length:** Papers may be submitted as either a **short paper (4 pages)** or a **long paper (8 pages)** (content pages). Unlimited space is allowed after the conclusion for limitations (encouraged), ethical considerations (encouraged), and references.
 * **Anonymity:** Submissions must be **non-anonymized** (i.e., include author names and affiliations).
 * **Title format:** Paper titles must follow: “{TEAM_NAME} at ArchEHR-QA 2026: {DESCRIPTIVE_TITLE}”, where the descriptive title reflects your approach.
-* **Template:** The Overleaf LaTeX template is available [here](https://www.overleaf.com/project/6887c0280bfaab6e3e8bd0bc).
+* **Template:** The Overleaf LaTeX template is available [here](https://www.overleaf.com/read/kjnddcxdrfmt#2032dc).
 
 
 ### Submissions
