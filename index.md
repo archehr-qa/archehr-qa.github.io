@@ -451,7 +451,7 @@ We report **Precision**, **Recall**, and **F1** over predicted alignment links.
 
 ### Scoring scripts
 
-Subtask 1 scoring script is available on GitHub at [https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation](https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation).
+Scoring scripts are available on GitHub at [https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation](https://github.com/soni-sarvesh/archehr-qa-2026/tree/main/evaluation).
 
 
 ## System Submission
@@ -466,8 +466,13 @@ We will use this information to help match team registrations to Codabench submi
 * Please nominate your best submission on each Codabench competition by pushing it to the leaderboard.
 * We ask teams with multiple members to nominate a single member to make all submissions (to avoid duplicate accounts/submissions and confusion).
 
-**Links:** Subtask 1 (Question Interpretation) CodaBench link: [https://www.codabench.org/competitions/12865/](https://www.codabench.org/competitions/12865/).
-Links for the remaining subtasks will be released soon.
+**Codabench Submission Links:**
+
+* Subtask 1 (Question Interpretation): [https://www.codabench.org/competitions/12865/](https://www.codabench.org/competitions/12865/)
+* Subtask 2 (Evidence Identification): [https://www.codabench.org/competitions/13526/](https://www.codabench.org/competitions/13526/)
+* Subtask 3 (Answer Generation): [https://www.codabench.org/competitions/13527/](https://www.codabench.org/competitions/13527/)
+* Subtask 4 (Evidence Alignment): [https://www.codabench.org/competitions/13528/](https://www.codabench.org/competitions/13528)
+
 
 The required submission formats for each subtask are as follows.
 
@@ -657,8 +662,17 @@ We ask participants to ensure that their paper includes proper citations to both
 
 ## Program Committee
 
-We are looking for people to join the program committee, where the responsibilities will include reviewing papers.
-If you are interested, please send an email to [**sarvesh.soni@nih.gov**](mailto:sarvesh.soni@nih.gov).
+* **Mohammad Arvan**, University of Illinois at Chicago, US
+* **Surabhi Datta**, IMO Health, US
+* **Sy Hwang**, University of Pennsylvania, US
+* **Samah Jarad-Fodeh**, Yale University, US
+* **Saran Krishnasamy**, GigitAI, US
+* **Vineet Mishra**, HCL Tech, US
+* **Anindita Nath**, CDC, US
+* **Aleksandr Nesterov**, Artificial Intelligence Research Institute, Russia
+* **Roshan Santhosh**, Adobe, US
+* **Suzanne Tamang**, Center for Population Health Sciences, Stanford University, US
+* **Talia Tseriotou**, Queen Mary University of London, UK
 
 ## References
 
