@@ -4,6 +4,7 @@
 
 ## News
 
+* **May 12, 2026**: The 2026 iteration of the shared task has concluded. The overview paper with the results is available at [https://aclanthology.org/2026.cl4health-1.23/](https://aclanthology.org/2026.cl4health-1.23/).
 * **March 2, 2026:** Due to technical submission issues, the Subtask 4 submission deadline has been extended by 2 days (new deadline: **March 4, 11:59 PM AoE**).
 * **February 20, 2026:** Subtask 4 test dataset released to registered participants. Submissions are now open on Codabench at [codabench.org/competitions/13528/](https://www.codabench.org/competitions/13528/).
 * **February 17, 2026:** Due to technical submission issues, the Subtasks 2–3 submission deadline has been extended by 2 days (new deadline: **Feb 18, 11:59 PM AoE**).
